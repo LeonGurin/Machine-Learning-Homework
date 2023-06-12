@@ -89,7 +89,7 @@ def main():
     avg_accuracy /= 10
     print(f"Avg test accuracy: {avg_accuracy * 100}%")
     # plot the data and the decision boundary
-    plot(X, y, [best_w[0], best_w[1], best_b])
+    # plot(X, y, [best_w[0], best_w[1], best_b])
 
 if __name__ == '__main__':
     main()
