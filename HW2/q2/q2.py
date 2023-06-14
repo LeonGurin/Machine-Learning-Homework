@@ -48,8 +48,8 @@ def performPCA(data, k=9, plot=False):
 	eigenvectors = eigenvectors[:, idx]
 
 	# plot the CDF of eigenvalues
-	if plot:
-		plot_cdf(eigenvalues)
+	# if plot:
+	# 	plot_cdf(eigenvalues)
 
 	# select the top k^2 eigenvectors
 	E = eigenvectors[:, :(k ** 2)].T
@@ -128,11 +128,11 @@ if __name__ == '__main__':
 	train_data, train_labels, test_data, test_labels = load_data('fashion-mnist_train.csv', 'fashion-mnist_test.csv')
 
 	# use PCA to reduce dimensionality from 28 by 28 to 9 by 9
-	PCA_train_data = performPCA(train_data, k=9, plot=True)
+	PCA_train_data = performPCA(train_data, k=9, plot=False)
 	
 	# test the model on the test data
 	optimal_dim_PCA = 10
-	PCA_train_data, E = performPCA(train_data, k=optimal_dim_PCA, plot=True)
+	PCA_train_data, E = performPCA(train_data, k=optimal_dim_PCA, plot=False)
 	PCA_test_data = np.matmul(E, (test_data - np.mean(test_data, axis=0)).T).T
 
 	# commented out
@@ -143,8 +143,8 @@ if __name__ == '__main__':
 	# print(f"Optimal k for KNN is: {optimal_k_KNN}")
 
 	optimal_k_KNN = 9
-	test_preds = performKNN(PCA_train_data, train_labels, PCA_test_data, test_labels, k=optimal_k_KNN, batch_size=100)
 	# test_preds = knn_parallel(PCA_train_data, train_labels, PCA_test_data, test_labels, k=optimal_k_KNN, batch_size=100)
+	test_preds = performKNN(PCA_train_data, train_labels, PCA_test_data, test_labels, k=optimal_k_KNN, batch_size=100)
 	accuracy = accuracy_score(test_labels, test_preds)
 	print(f"Test accuracy is: {accuracy * 100}%")
 
