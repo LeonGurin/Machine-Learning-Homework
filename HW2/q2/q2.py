@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
-from scipy.spatial import distance_matrix
+from scipy.spatial.distance import cdist
 from sklearn.metrics import accuracy_score
 import os
 import timeit as time
+from joblib import Parallel, delayed
 
 def plot_cdf(data):
 	sorted_data = np.sort(data)[::-1]
@@ -86,14 +86,14 @@ def performKNN(train_X, train_y, test_X, test_y, k, batch_size=100):
     test_preds = np.zeros(num_test_samples)
 
     for i in range(num_batches):
-        print(f"Batch {i+1}/{num_batches}")
+        # print(f"Batch {i+1}/{num_batches}")
         start_idx = i * batch_size
-        end_idx = np.min((i + 1) * batch_size, num_test_samples)
+        end_idx = min((i + 1) * batch_size, num_test_samples)
 
         test_X_batch = test_X[start_idx:end_idx]
 
 		# compute the distance matrix between the test and train data
-        dist_matrix = distance_matrix(test_X_batch, train_X)
+        dist_matrix = cdist(test_X_batch, train_X)
 	
 		# find the k nearest neighbors
         neighbors_indices = np.argpartition(dist_matrix, k, axis=1)[:, :k]
@@ -106,6 +106,20 @@ def performKNN(train_X, train_y, test_X, test_y, k, batch_size=100):
 
     return test_preds
 
+def knn_batch(train_X, train_y, test_X_batch, k):
+    dist_matrix = cdist(test_X_batch, train_X)
+    neighbors_indices = np.argpartition(dist_matrix, k, axis=1)[:, :k]
+    neighbors_labels = train_y[neighbors_indices]
+    return np.apply_along_axis(lambda x: np.bincount(x).argmax(), axis=1, arr=neighbors_labels)
+
+def knn_parallel(train_X, train_y, test_X, test_y, k, batch_size=100, n_jobs=-1):
+	num_test_samples = test_X.shape[0]
+	num_batches = int(np.ceil(num_test_samples / batch_size))
+
+	test_preds = Parallel(n_jobs=n_jobs)(delayed(knn_batch)(train_X, train_y, test_X[i * batch_size: (i + 1) * batch_size], k) for i in range(num_batches))
+	print(f"k = {k}, accuracy = {accuracy_score(test_y, np.concatenate(test_preds))}")
+	return np.concatenate(test_preds)
+
 if __name__ == '__main__':
 	# start timer	
 	start = time.default_timer()
@@ -114,26 +128,27 @@ if __name__ == '__main__':
 	train_data, train_labels, test_data, test_labels = load_data('fashion-mnist_train.csv', 'fashion-mnist_test.csv')
 
 	# use PCA to reduce dimensionality from 28 by 28 to 9 by 9
-	PCA_train_data = performPCA(train_data, plot=True)
+	PCA_train_data = performPCA(train_data, k=9, plot=True)
 	
 	# test the model on the test data
 	optimal_dim_PCA = 10
-	PCA_train_data, E = performPCA(train_data, k=optimal_dim_PCA)
+	PCA_train_data, E = performPCA(train_data, k=optimal_dim_PCA, plot=True)
 	PCA_test_data = np.matmul(E, (test_data - np.mean(test_data, axis=0)).T).T
 
-	print(PCA_train_data.shape, PCA_test_data.shape)
-
-	# commented out because it takes a long time to run 😭	
+	# commented out
 	# k_values = range(1, 15)
-	# accuracies = [performKNN(PCA_train_data, train_class_col, PCA_test_data, test_class_col, k) for k in k_values]
-	# optimal_k = k_values[np.argmax(accuracies)]
+	# test_preds = [knn_parallel(PCA_train_data, train_labels, PCA_test_data, test_labels, k) for k in k_values]
+	# accuracy = [accuracy_score(test_labels, test_pred) for test_pred in test_preds]
+	# optimal_k_KNN = k_values[np.argmax(accuracy)]
+	# print(f"Optimal k for KNN is: {optimal_k_KNN}")
 
-	optimal_k_KNN = 10
+	optimal_k_KNN = 9
 	test_preds = performKNN(PCA_train_data, train_labels, PCA_test_data, test_labels, k=optimal_k_KNN, batch_size=100)
+	# test_preds = knn_parallel(PCA_train_data, train_labels, PCA_test_data, test_labels, k=optimal_k_KNN, batch_size=100)
 	accuracy = accuracy_score(test_labels, test_preds)
 	print(f"Test accuracy is: {accuracy * 100}%")
 
 	# stop timer
 	stop = time.default_timer()
-	print('Time: ', stop - start)
+	# print('Time: ', stop - start)
 
