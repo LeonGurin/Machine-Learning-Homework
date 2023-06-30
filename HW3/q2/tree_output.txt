@@ -1,0 +1,408 @@
+('safety', 'low'): unacc
+('safety', 'med'):
+  ('persons', '4'):
+    ('buying', 'med'):
+      ('maint', 'med'): acc
+      ('maint', 'vhigh'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): unacc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+      ('maint', 'high'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): unacc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): good
+          ('doors', '3'): acc
+          ('doors', '5more'): good
+          ('doors', '2'): acc
+        ('lug_boot', 'small'): acc
+        ('lug_boot', 'big'): good
+    ('buying', 'vhigh'):
+      ('maint', 'med'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): unacc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+      ('maint', 'vhigh'): unacc
+      ('maint', 'high'): unacc
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): unacc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+    ('buying', 'high'):
+      ('lug_boot', 'med'):
+        ('doors', '4'):
+          ('maint', 'med'): acc
+          ('maint', 'vhigh'): unacc
+          ('maint', 'high'): acc
+          ('maint', 'low'): acc
+        ('doors', '3'): unacc
+        ('doors', '5more'):
+          ('maint', 'med'): acc
+          ('maint', 'vhigh'): unacc
+          ('maint', 'high'): acc
+          ('maint', 'low'): acc
+        ('doors', '2'): unacc
+      ('lug_boot', 'small'): unacc
+      ('lug_boot', 'big'):
+        ('maint', 'med'): acc
+        ('maint', 'vhigh'): unacc
+        ('maint', 'high'): acc
+        ('maint', 'low'): acc
+    ('buying', 'low'):
+      ('maint', 'med'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): good
+          ('doors', '3'): acc
+          ('doors', '5more'): good
+          ('doors', '2'): acc
+        ('lug_boot', 'small'): acc
+        ('lug_boot', 'big'): good
+      ('maint', 'vhigh'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): unacc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+      ('maint', 'high'): acc
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): good
+          ('doors', '3'): acc
+          ('doors', '5more'): good
+          ('doors', '2'): acc
+        ('lug_boot', 'small'): acc
+        ('lug_boot', 'big'): good
+  ('persons', 'more'):
+    ('buying', 'med'):
+      ('maint', 'med'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+      ('maint', 'vhigh'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+      ('maint', 'high'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): good
+          ('doors', '3'): good
+          ('doors', '5more'): good
+          ('doors', '2'): acc
+        ('lug_boot', 'small'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'big'): good
+    ('buying', 'vhigh'):
+      ('maint', 'med'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+      ('maint', 'vhigh'): unacc
+      ('maint', 'high'): unacc
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+    ('buying', 'high'):
+      ('lug_boot', 'med'):
+        ('maint', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('maint', 'vhigh'): unacc
+        ('maint', 'high'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('maint', 'low'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+      ('lug_boot', 'small'): unacc
+      ('lug_boot', 'big'):
+        ('maint', 'med'): acc
+        ('maint', 'vhigh'): unacc
+        ('maint', 'high'): acc
+        ('maint', 'low'): acc
+    ('buying', 'low'):
+      ('maint', 'med'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): good
+          ('doors', '3'): good
+          ('doors', '5more'): good
+          ('doors', '2'): acc
+        ('lug_boot', 'small'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'big'): good
+      ('maint', 'vhigh'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'small'): unacc
+        ('lug_boot', 'big'): acc
+      ('maint', 'high'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): good
+          ('doors', '3'): good
+          ('doors', '5more'): good
+          ('doors', '2'): acc
+        ('lug_boot', 'small'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'big'): good
+  ('persons', '2'): unacc
+('safety', 'high'):
+  ('persons', '4'):
+    ('buying', 'med'):
+      ('maint', 'med'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): acc
+          ('doors', '5more'): vgood
+          ('doors', '2'): acc
+        ('lug_boot', 'small'): acc
+        ('lug_boot', 'big'): vgood
+      ('maint', 'vhigh'): acc
+      ('maint', 'high'): acc
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): good
+          ('doors', '5more'): vgood
+          ('doors', '2'): good
+        ('lug_boot', 'small'): good
+        ('lug_boot', 'big'): vgood
+    ('buying', 'vhigh'):
+      ('maint', 'med'): acc
+      ('maint', 'vhigh'): unacc
+      ('maint', 'high'): unacc
+      ('maint', 'low'): acc
+    ('buying', 'high'):
+      ('maint', 'med'): acc
+      ('maint', 'vhigh'): unacc
+      ('maint', 'high'): acc
+      ('maint', 'low'): acc
+    ('buying', 'low'):
+      ('maint', 'med'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): good
+          ('doors', '5more'): vgood
+          ('doors', '2'): good
+        ('lug_boot', 'small'): good
+        ('lug_boot', 'big'): vgood
+      ('maint', 'vhigh'): acc
+      ('maint', 'high'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): acc
+          ('doors', '5more'): vgood
+          ('doors', '2'): acc
+        ('lug_boot', 'small'): acc
+        ('lug_boot', 'big'): vgood
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): good
+          ('doors', '5more'): vgood
+          ('doors', '2'): good
+        ('lug_boot', 'small'): good
+        ('lug_boot', 'big'): vgood
+  ('persons', 'more'):
+    ('buying', 'med'):
+      ('maint', 'med'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): vgood
+          ('doors', '5more'): vgood
+          ('doors', '2'): acc
+        ('lug_boot', 'small'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'big'): vgood
+      ('maint', 'vhigh'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+      ('maint', 'high'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): vgood
+          ('doors', '5more'): vgood
+          ('doors', '2'): good
+        ('lug_boot', 'small'):
+          ('doors', '4'): good
+          ('doors', '3'): good
+          ('doors', '5more'): good
+          ('doors', '2'): unacc
+        ('lug_boot', 'big'): vgood
+    ('buying', 'vhigh'):
+      ('maint', 'med'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+      ('maint', 'vhigh'): unacc
+      ('maint', 'high'): unacc
+      ('maint', 'low'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+    ('buying', 'high'):
+      ('maint', 'med'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+      ('maint', 'vhigh'): unacc
+      ('maint', 'high'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+      ('maint', 'low'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+    ('buying', 'low'):
+      ('maint', 'med'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): vgood
+          ('doors', '5more'): vgood
+          ('doors', '2'): good
+        ('lug_boot', 'small'):
+          ('doors', '4'): good
+          ('doors', '3'): good
+          ('doors', '5more'): good
+          ('doors', '2'): unacc
+        ('lug_boot', 'big'): vgood
+      ('maint', 'vhigh'):
+        ('doors', '4'): acc
+        ('doors', '3'): acc
+        ('doors', '5more'): acc
+        ('doors', '2'):
+          ('lug_boot', 'med'): acc
+          ('lug_boot', 'small'): unacc
+          ('lug_boot', 'big'): acc
+      ('maint', 'high'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): vgood
+          ('doors', '5more'): vgood
+          ('doors', '2'): acc
+        ('lug_boot', 'small'):
+          ('doors', '4'): acc
+          ('doors', '3'): acc
+          ('doors', '5more'): acc
+          ('doors', '2'): unacc
+        ('lug_boot', 'big'): vgood
+      ('maint', 'low'):
+        ('lug_boot', 'med'):
+          ('doors', '4'): vgood
+          ('doors', '3'): vgood
+          ('doors', '5more'): vgood
+          ('doors', '2'): good
+        ('lug_boot', 'small'):
+          ('doors', '4'): good
+          ('doors', '3'): good
+          ('doors', '5more'): good
+          ('doors', '2'): unacc
+        ('lug_boot', 'big'): vgood
+  ('persons', '2'): unacc
+depth is 6
