@@ -1,2 +1,0 @@
-Training accuracy is 1.0
-Training accuracy is 1.0
